@@ -7,11 +7,16 @@ var markerHiro, markerZb;
 let fontRussian;
 
 let ryabImage01;
-
+var posLeftX, posRightX, posTranslateX;
+var posLeftY, posRightY, posTranslateY;
+var left,right,translate;
 function preload()
 {
   fontRussian = loadFont("fonts/russian.ttf");
   ryabImage01 = loadImage("images/RYAB_001.jpg");
+  left = loadImage("images/left_button.png");
+  right = loadImage("images/right_button.png");
+
 }
 
 
