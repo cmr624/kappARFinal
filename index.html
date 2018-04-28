@@ -25,7 +25,7 @@
 			}
 
       /* shows a warning message when the screen is rotated into portrait mode -- necessary to prevent issues on mobile devices */
-			@media screen and (orientation:portrait) {
+			@media screen and (orientation:landscape) {
 				#portrait_warning {
 					position: fixed;
 					top: 0px;
@@ -40,7 +40,7 @@
 			}
 
       /* hides the rotational warning when the screen is in landscape mode */
-			@media screen and (orientation:landscape) {
+			@media screen and (orientation:portrait) {
 				#portrait_warning {
 					display: none;
 				}

@@ -29,9 +29,9 @@ function setup() {
   markerZb = world.getMarker('zb');
 
   posLeftX = width/2-100;
-	posLeftY = windowHeight-100;
+	posLeftY = windowHeight-280;
 	posRightX = width/2+100;
-	posRightY = windowHeight-100;
+	posRightY = windowHeight-280;
 	posTranslateX = width/2;
 	posTranslateY = posLeftY;
 
@@ -56,10 +56,10 @@ function draw() {
   }
   // left and right button
 	imageMode(CENTER);
-	image(left,posLeftX,posLeftY);
-	image(right,posRightX,posRightY);
+	image(left,posLeftX,posLeftY, 50, 50);
+	image(right,posRightX,posRightY, 50, 50);
 
-	if(txt) text("sdhjkfaljdska",width/2,height/2);
+	//if(txt) text("sdhjkfaljdska",width/2,height/2);
 }
 
 function mousePressed() {
