@@ -61,8 +61,8 @@ function draw() {
   }
   // left and right button
 	imageMode(CENTER);
-	image(left,posLeftX,posLeftY, 50, 50);
-	image(right,posRightX,posRightY, 50, 50);
+	image(left,posLeftX,posLeftY);
+	image(right,posRightX,posRightY);
 
 	//if(txt) text("sdhjkfaljdska",width/2,height/2);
 }
