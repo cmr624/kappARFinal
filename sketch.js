@@ -10,13 +10,17 @@ let ryabImage01;
 var posLeftX, posRightX, posTranslateX;
 var posLeftY, posRightY, posTranslateY;
 var left,right,translate;
+
+var language = 0; // 0: EN, 1: RU, 2: HEB
+var languages = ["ENG","RUS","HEB"]
+
 function preload()
 {
   fontRussian = loadFont("fonts/russian.ttf");
   ryabImage01 = loadImage("images/RYAB_001.jpg");
   left = loadImage("images/left_button.png");
   right = loadImage("images/right_button.png");
-
+  translate = loadImage("images/translate_button.png");
 }
 
 
@@ -62,11 +66,27 @@ function draw() {
   // left and right button
 	imageMode(CENTER);
   //fuck this
-	image(left,posLeftX,posLeftY, 80, 50);
-	image(right,posRightX,posRightY, 80, 50);
+	image(left,posLeftX,posLeftY, 50, 50);
+	image(right,posRightX,posRightY, 50, 50);
+	image(translate, posTranslateX, posTranslateY-5);
+	
+	fill(255);
+	textSize(22);
+	textAlign(CENTER);
+	text(languages[language], posTranslateX,posTranslateY);
+	
+	if(changeLanguage == true) {
+		changeLanguageTimer--;
+		if(changeLanguageTimer < 0){
+			changeLanguageTimer = 30;
+			changeLanguage = false;
+		}
+	}
 
-	//if(txt) text("sdhjkfaljdska",width/2,height/2);
 }
+
+var changeLanguage = false;
+var changeLanguageTimer = 30;
 
 function mousePressed() {
 	if(dist(mouseX,mouseY,posLeftX,posLeftY) < 25) {
@@ -75,6 +95,14 @@ function mousePressed() {
 
 	if(dist(mouseX,mouseY,posRightX,posRightY) < 25) {
 		// add code
+	}
+	
+	if(dist(mouseX,mouseY,posTranslateX,posTranslateY) < 80) {
+		if(changeLanguage == false) {
+			language += 1;
+			if(language==3) language = 0;
+			changeLanguage = true;
+		}
 	}
 
 
