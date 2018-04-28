@@ -28,13 +28,18 @@ function setup() {
   markerHiro = world.getMarker('hiro');
   markerZb = world.getMarker('zb');
 
-  posLeftX = width/2-100;
-	posLeftY = windowHeight-280;
-	posRightX = width/2+100;
-	posRightY = windowHeight-280;
+  posLeftX = width/2 - (.15 * width);
+	posLeftY = height-(.1 * height);
+	posRightX = width/2 + (.15 * width);
+	posRightY = height - (.1 * height);
 	posTranslateX = width/2;
 	posTranslateY = posLeftY;
 
+  //DATA
+  english1 = "hey";
+
+  console.log(posLeftX);
+  console.log(posRightY);
 }
 
 
