@@ -11,7 +11,7 @@ let ryabImage01;
 function preload()
 {
   fontRussian = loadFont("fonts/russian.ttf");
-  ryabImage01 = loadImage("images/RYAB_006.jpg");
+  ryabImage01 = loadImage("images/RYAB_001.jpg");
 }
 
 
@@ -22,6 +22,14 @@ function setup() {
   // grab a reference to our two markers that we set up on the HTML side (connect to it using its 'id')
   markerHiro = world.getMarker('hiro');
   markerZb = world.getMarker('zb');
+
+  posLeftX = width/2-100;
+	posLeftY = windowHeight-100;
+	posRightX = width/2+100;
+	posRightY = windowHeight-100;
+	posTranslateX = width/2;
+	posTranslateY = posLeftY;
+
 }
 
 
@@ -41,6 +49,24 @@ function draw() {
     let s1 = new Slide(hiroPosition.x, hiroPosition.y, 294, 200, ryabImage01, "ENGLISH", "RUSSIAN", "HEBREW", 0);
     s1.display();
   }
+  // left and right button
+	imageMode(CENTER);
+	image(left,posLeftX,posLeftY);
+	image(right,posRightX,posRightY);
+
+	if(txt) text("sdhjkfaljdska",width/2,height/2);
+}
+
+function mousePressed() {
+	if(dist(mouseX,mouseY,posLeftX,posLeftY) < 25) {
+		// add code
+	}
+
+	if(dist(mouseX,mouseY,posRightX,posRightY) < 25) {
+		// add code
+	}
+
+
 }
 class Slide
 {
