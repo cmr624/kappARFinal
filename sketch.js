@@ -4,6 +4,14 @@ var world;
 // create variables to hold our markers
 var markerHiro, markerZb;
 
+let fontRussian;
+
+function preload()
+{
+  fontRussian = loadFont("fonts/russian.ttf");
+}
+
+
 function setup() {
   // create our world (this also creates a p5 canvas for us)
   world = new World('ARScene');
@@ -29,7 +37,12 @@ function draw() {
     strokeWeight(5);
     ellipse( zbPosition.x, zbPosition.y, 50, 50 );
     strokeWeight(1);
-    text("Hiro marker: " + zbPosition.x + ", " + zbPosition.y, zbPosition.x, zbPosition.y+50);
+    textFont(fontRussian);
+    //RUSSIAN FAILS
+    text("Евгения Самойловна Рябая родилась 6 марта 1919 года витута. После начала войны эвагом в госпитале" + zbPosition.x + ", " + zbPosition.y, zbPosition.x, zbPosition.y+50);
+    //HEBREW FAILS
+    //text("יטרי בחטיבת הרובים " + zbPosition.x + ", " + zbPosition.y, zbPosition.x, zbPosition.y+50);
+
   }
 
 }
