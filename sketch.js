@@ -14,6 +14,9 @@ var left,right,translate;
 var language = 0; // 0: EN, 1: RU, 2: HEB
 var languages = ["ENG","RUS","HEB"]
 
+let s1;
+let plane;
+
 function preload()
 {
   fontRussian = loadFont("fonts/russian.ttf");
