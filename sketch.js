@@ -19,7 +19,7 @@ let plane;
 let index;
 let slideArr = [];
 let currentSlide;
-let s1English, s1Russian, s1Hebrew, s2English, s2Russian, s2Hebrew, s3English, s3Russian, s3Hebrew, s4English, s4Russian, s4Hebrew;
+let s1English, s2English, s2Russian, s2Hebrew, s3English, s3Russian, s3Hebrew, s4English, s4Russian, s4Hebrew;
 
 function preload()
 {
@@ -48,19 +48,19 @@ function setup() {
 	posTranslateX = width/2;
 	posTranslateY = posLeftY;
   s1English = "\t\tEvgeniya Samoilovna Ryabaya was born on March 6, 1919, in Ribnita, Moldova. Having completed two years of medical school in Dnipropetrovsk by the time the war erupted, she evacuated to Sverdlovsk [Yekaterinburg], continued her studies, and began working as a surgeon.";
-  s1Russian = "\t\t";
-  s1Hebrew = "\t\t";
+  //s1Russian = "\t\tЕвгения Самойловна Рябая родилась 6 марта 1919 года в городе Рыбница, Молдавия. До начала войны окончила два курса Днепропетровского медицинского института. После начала войны эвакуировалась в Свердловск, где продолжала учиться в медицинском институте и одновременно начала работать хирургом в госпитале.";
+  //s1Hebrew = "\t\tיבגניה סמוילובנה ריאבאיה נולדה ב - 6 במרס 1919 בריבניטה, מולדובה. לאחר שסיימה שנתיים בבית הספר לרפואה בדנייפרופטרובסק, פרצה המלחמה והיא פונתה לסוורדלובסק [יקטרינבורג] אשר המשיכה את לימודיה והחלה לעבוד כמנתחת.";
 
-  s2English = "\t\tShe was drafted in 1942 and served in the medical-sanitary battalion in the 183rd Rifle Division of the 38th Army. Ryabaya performed amputations and other surgeries in dugouts and in tents at the Battle of Kursk, near Kharkiv, in western Ukraine, and in Poland. Here she is pictured with fellow field hospital medics of the 183rd Rifle Division. According to a later inscription on the back, the photograph was taken at the 4th Ukrainian Front.";
-  s2Russian = "\t\t";
-  s2Hebrew = "\t\t";
+  s2English = "\t\tRyabaya was drafted in 1942 and served in the medical-sanitary battalion in the 183rd Rifle Division of the 38th Army (Pictured here). She performed amputations and other surgeries in dugouts and in tents at the Battle of Kursk, near Kharkiv, in western Ukraine, and in Poland."
+  s2Russian = "\t\tВ 1942 году призвана в армию и направлена в медсанбат стрелковой дивизии, где работала хирургом.  Оперировала раненых в землянках и палатках на Курской дуге, под Харьковом, в Западной Украине, Польше. Вот Рябая на этой групповой фотографии с фронта. ";
+  s2Hebrew = "\t\tהיא גויסה ב - 1942 ושירתה בגדוד הרפואי - סניטרי בחטיבת הרובים ה - 183 של הצבא ה - 38. ריאבאיה ביצעה קטיעות וניתוחים אחרים בתעלות ובאוהלים בקרב על קורסק, ליד חרקוב, במערב אוקראינה, ובפולין. הנה היא מופיעה עם חובשים אחרים בבית החולים שדה של חטיבת הרובים 183. על פי כתובת על הגב, התצלום צולם בחזית האוקראינית הרביעית.";
 
   s3English = "\t\tRyabaya participated in many battles throughout the duration of World War II. Here is a hand-drawn combat map of the battle dates and locations of Ryabaya's unit, the 183rd Rifle Division. Notice how the map traces a path from Riga to Kiev, and ends at Prague in June of 1945.";
-  s3Russian = "\t\t";
+  s3Russian = "\t\tРябая участвовала во многих битвах во время Второй мировой войны. В этой рукописной карте вы можете проследовать по пути 183 стрелковой дивизии и читать информацию о датах и местах боев.";
   s3Hebrew = "\t\t";
 
-  s4English = '\t\tRyabaya received medals "For Courage," “Order of the Red Star”, and “Order of the Patriotic War 2nd Class”. Upon enduring a concussion at the close of the war, she returned to Ukraine, where she managed internal medicine and cardiology wards before emigrating to the United States. Pictured here is a newspaper article entitled “Women and War” published in the Russian-language American newspaper "Forum.” Here, Ryabaya speaks personally about her experiences as a female soldier in World War II.';
-  s4Russian = "\t\t";
+  s4English = '\t\tUpon enduring a concussion at the close of the war, Ryabaya returned to Ukraine, and later emigrated to the United States. Pictured here is a newspaper article entitled \"Women and War\" published in the Russian-language American newspaper \"Forum.\"';
+  s4Russian = "\t\tריאבאיה השתתפה בקרבות רבים לאורך כל מלחמת העולם השנייה. הנה מפה מצוירת ביד של תאריכי הקרב ואת מיקומו של יחידת של ריאבאיה, חטיבת הרובים 183. שים לב איך המפה רשמים נתיב מריגה לקייב, ומסתיים בפראג ביוני 1945.";
   s4Hebrew = "\t\t";
 
   s1 = new Slide(3.04, 4.84, "ryab01", s1English, s1Russian, s1Hebrew, 0);
@@ -100,6 +100,7 @@ function draw() {
 
     fill(0);
     textAlign(LEFT);
+    //textFont(fontRussian);
     text(currentSlide.currentLang, width/2, .888 * height, 400, 200);
     imageMode(CENTER);
     //fuck this
@@ -114,9 +115,6 @@ function draw() {
     var hiroPosition = markerHiro.getScreenPosition();
   }
   // left and right button
-
-
-
 
 	if(changeLanguage == true) {
 		changeLanguageTimer--;
