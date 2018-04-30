@@ -94,7 +94,7 @@ function draw() {
     noStroke();
     rectMode(CENTER);
     textSize(15);
-
+    fill(255, 150);
     rect(posTextBoxX, posTextBoxY, .55 * width, .5 * height, 15);
 
     fill(0);
@@ -102,8 +102,7 @@ function draw() {
     //textFont(fontRussian);
     text(currentSlide.currentLang, width/2, .85 * height, 400, 200);
     imageMode(CENTER);
-    //fuck this
-
+    fill(255);
     image(left,posLeftX,posLeftY, 50, 50);
     image(right,posRightX,posRightY, 50, 50);
     image(translate, posTranslateX, posTranslateY-5);
